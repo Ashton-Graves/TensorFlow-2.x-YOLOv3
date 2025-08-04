@@ -10,7 +10,7 @@
 #================================================================
 
 # YOLO options
-YOLO_TYPE                   = "yolov3" # yolov4 or yolov3
+YOLO_TYPE                   = "yolov4" # yolov4 or yolov3
 YOLO_FRAMEWORK              = "tf" # "tf" or "trt"
 YOLO_V3_WEIGHTS             = "model_data/yolov3.weights"
 YOLO_V4_WEIGHTS             = "model_data/yolov4.weights"
@@ -34,16 +34,16 @@ if YOLO_TYPE                == "yolov3":
                                [[30,  61], [62,   45], [59,  119]],
                                [[116, 90], [156, 198], [373, 326]]]
 # Train options
-TRAIN_YOLO_TINY             = False
+TRAIN_YOLO_TINY             = True
 TRAIN_SAVE_BEST_ONLY        = True # saves only best model according validation loss (True recommended)
 TRAIN_SAVE_CHECKPOINT       = False # saves all best validated checkpoints in training process (may require a lot disk space) (False recommended)
-TRAIN_CLASSES               = "mnist/mnist.names"
-TRAIN_ANNOT_PATH            = "mnist/mnist_train.txt"
+TRAIN_CLASSES               = "model_data/Human_Dataset_v2_YOLO/train/_classes.txt"
+TRAIN_ANNOT_PATH            = "model_data/Human_Dataset_v2_YOLO/train/_annotations_.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
 TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
-TRAIN_LOAD_IMAGES_TO_RAM    = True # With True faster training, but need more RAM
-TRAIN_BATCH_SIZE            = 4
+TRAIN_LOAD_IMAGES_TO_RAM    = False # With True faster training, but need more RAM
+TRAIN_BATCH_SIZE            = 32
 TRAIN_INPUT_SIZE            = 416
 TRAIN_DATA_AUG              = True
 TRAIN_TRANSFER              = True
@@ -51,11 +51,11 @@ TRAIN_FROM_CHECKPOINT       = False # "checkpoints/yolov3_custom"
 TRAIN_LR_INIT               = 1e-4
 TRAIN_LR_END                = 1e-6
 TRAIN_WARMUP_EPOCHS         = 2
-TRAIN_EPOCHS                = 100
+TRAIN_EPOCHS                = 40
 
 # TEST options
-TEST_ANNOT_PATH             = "mnist/mnist_test.txt"
-TEST_BATCH_SIZE             = 4
+TEST_ANNOT_PATH             = "model_data/Human_Dataset_v2_YOLO/test/_annotations_.txt"
+TEST_BATCH_SIZE             = 32
 TEST_INPUT_SIZE             = 416
 TEST_DATA_AUG               = False
 TEST_DECTECTED_IMAGE_PATH   = ""

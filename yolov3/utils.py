@@ -511,7 +511,7 @@ def detect_video(Yolo, video_path, output_path, input_size=416, show=False, CLAS
 # detect from webcam
 def detect_realtime(Yolo, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
     times = []
-    vid = cv2.VideoCapture(1)
+    vid = cv2.VideoCapture(0)
 
     if output_path:
         # by default VideoCapture returns float instead of int
