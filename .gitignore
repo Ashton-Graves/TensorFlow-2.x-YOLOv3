@@ -3,5 +3,3 @@ model_data
 configs.py
 
 .DS_Store
-
-!model_data/Human_Dataset_v2_YOLO
