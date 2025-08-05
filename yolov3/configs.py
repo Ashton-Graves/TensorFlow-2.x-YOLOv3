@@ -37,8 +37,8 @@ if YOLO_TYPE                == "yolov3":
 TRAIN_YOLO_TINY             = True
 TRAIN_SAVE_BEST_ONLY        = True # saves only best model according validation loss (True recommended)
 TRAIN_SAVE_CHECKPOINT       = False # saves all best validated checkpoints in training process (may require a lot disk space) (False recommended)
-TRAIN_CLASSES               = "model_data/Human_Dataset_v2_YOLO/train/_classes.txt"
-TRAIN_ANNOT_PATH            = "model_data/Human_Dataset_v2_YOLO/train/_annotations_.txt"
+TRAIN_CLASSES               = "model_data/Human_Dataset_v2_YOLO/train_filtered/_classes.txt"
+TRAIN_ANNOT_PATH            = "model_data/Human_Dataset_v2_YOLO/train_filtered/_annotations_f_r.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
 TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
@@ -54,7 +54,7 @@ TRAIN_WARMUP_EPOCHS         = 2
 TRAIN_EPOCHS                = 40
 
 # TEST options
-TEST_ANNOT_PATH             = "model_data/Human_Dataset_v2_YOLO/test/_annotations_.txt"
+TEST_ANNOT_PATH             = "model_data/Human_Dataset_v2_YOLO/test_filtered/_annotations_f_r.txt"
 TEST_BATCH_SIZE             = 32
 TEST_INPUT_SIZE             = 416
 TEST_DATA_AUG               = False
